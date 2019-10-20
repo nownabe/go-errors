@@ -35,7 +35,7 @@ type appError struct {
 	frames [3]uintptr
 }
 
-// E is a helper function to construct an Error.
+// E constructs an error.
 func E(op Op, args ...interface{}) error {
 	e := &appError{op: op}
 	runtime.Callers(1, e.frames[:])
@@ -56,8 +56,8 @@ func E(op Op, args ...interface{}) error {
 	return e
 }
 
-// Ops aggregates the error's operation
-// with all the embedded errors.
+// Ops aggregates the error's operations
+// with embedded errors.
 func Ops(err error) []string {
 	ops := []string{}
 	for {
