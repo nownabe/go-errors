@@ -56,6 +56,11 @@ func E(op Op, args ...interface{}) error {
 	return e
 }
 
+// New constructs a new error.
+func New(msg string) error {
+	return fmt.Errorf(msg)
+}
+
 // Ops aggregates the error's operation
 // with all the embedded errors.
 func Ops(err error) []string {
