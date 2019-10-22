@@ -6,8 +6,8 @@ import (
 	"runtime"
 	"strconv"
 
-	"golang.org/x/xerrors"
 	"go.nownabe.dev/log"
+	"golang.org/x/xerrors"
 )
 
 const (
