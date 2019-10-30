@@ -53,6 +53,10 @@ func E(op Op, args ...interface{}) error {
 		}
 	}
 
+	if e.err == nil {
+		e.err = New(string(op))
+	}
+
 	return e
 }
 
